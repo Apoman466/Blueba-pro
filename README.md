@@ -1,37 +1,63 @@
-# 🏎️ Blueba Pro Control
+# 🤖 Blueba Pro - Bluetooth Robot Kontrol
 
-**Blueba Pro Control**, Arduino ve Deneyap Kart tabanlı robotik projeler için geliştirilmiş, yüksek performanslı bir Android Bluetooth kontrol uygulamasıdır. Özellikle **Teknofest Robolig** gibi yarışmalarda akıcı ve güvenli kontrol sağlamak amacıyla tasarlanmıştır.
-
-## 📱 Uygulama Özellikleri
-- 🎮 **Yatay Gamepad Arayüzü:** Tam ekran landscape modu ile profesyonel sürüş deneyimi.
-- 🛡️ **Güvenli Veri Protokolü:** Herhangi bir butona basılmadığında otomatik olarak **"0"** verisi göndererek robotun kontrolsüz hareket etmesini engeller.
-- 🏗️ **Gelişmiş Kontrol:** OnTouchListener yapısı sayesinde bas-çek mantığıyla milisaniyelik tepki süresi.
-- 🛠️ **Çok Yönlü Kullanım:** 4 yönlü hareket oklarına ek olarak Kıskaç, Lamba veya Korna gibi ek donanımlar için 4 adet aksiyon butonu (Δ, X, □, O).
-- 🔗 **Dinamik Bağlantı:** Uygulama içinden Bluetooth cihaz seçme ve yönetme ekranı.
-
-## 🛰️ Veri Protokolü (Buton Haritası)
-
-Uygulama üzerinden gönderilen karakterler aşağıdadır:
-
-| Buton | Gönderilen Veri | Fonksiyon |
-| :--- | :---: | :--- |
-| **İleri (↑)** | `F` | İleri Hareket |
-| **Geri (↓)** | `B` | Geri Hareket |
-| **Sol (←)** | `L` | Sola Dönüş |
-| **Sağ (→)** | `R` | Sağa Dönüş |
-| **Üst (Δ)** | `1` | Özel Aksiyon 1 (Örn: Kıskaç Aç) |
-| **Alt (X)** | `2` | Özel Aksiyon 2 (Örn: Kıskaç Kapat) |
-| **Sol (□)** | `3` | Özel Aksiyon 3 |
-| **Sağ (O)** | `4` | Özel Aksiyon 4 |
-| **BOŞTA** | `0` | Dur / Güvenli Mod |
-
-## 🛠️ Kurulum ve Geliştirme
-Uygulama **AIDE** ortamında Java diliyle geliştirilmiştir.
-
-- **Paket Adı:** `com.bbgaming.blueba.tr`
-- **Minimum Android Sürümü:** 5.0 (API 21)
-- **Hedef Sürüm:** Android 12+ (Bluetooth Connect/Scan İzinleri Dahil)
-
+**Blueba Pro**, Android cihazlar üzerinden HC-05/HC-06 gibi Bluetooth modüllerine sahip robotik sistemleri yönetmek için tasarlanmış bir kontrol arayüzüdür. 
 
 ---
-⭐ Bu projeyi beğendiyseniz yıldız (star) vermeyi unutmayın!
+
+## ⚠️ Önemli: Başlamadan Önce
+Uygulamayı sorunsuz kullanabilmek için aşağıdaki adımları mutlaka tamamlamalısınız:
+
+1.  **İzinler:** Uygulama ilk açıldığında veya telefon ayarlarından **Bluetooth** ve **Konum** (cihaz tarama için gereklidir) izinlerini el ile onaylamalısınız.
+2.  **Eşleştirme:** Robotunuzun Bluetooth modülünü veya PC'nizi uygulamanın içinden önce telefonun kendi Bluetooth ayarlarından "Eşleşmiş Cihazlar" listesine eklemelisiniz.
+3.  **Bağlantı:** Uygulama içindeki **BAĞLAN** butonu sadece daha önceden telefonla eşleşmiş cihazları listeler.
+
+---
+
+## 🚀 Özellikler
+* **Geniş Kontrol Paneli:** Kolay kullanım için devasa buton tasarımları.
+* **Hassas Hız Ayarı:** Robotun gücünü tek tıkla değiştirme imkanı.
+* **Kıskaç Kontrolü:** Kıskaç mekanizmaları için özel "Aç/Kapa" desteği.
+* **Güvenlik Modu:** Elinizi butondan çektiğiniz anda robotu durdurmak için otomatik "S" sinyali gönderimi.
+
+---
+
+## 📡 Bluetooth Veri Protokolü (Buton Haritası)
+
+Robotunuzdaki yazılımı (Arduino/ESP32 vb.) aşağıdaki karakterlere göre hazırlamalısınız:
+
+### 🏎 Hareket Kontrolü
+| Hareket | Basınca Gönderilen | Bırakınca Gönderilen |
+| :--- | :---: | :---: |
+| **İleri** | `F` | `S` |
+| **Geri** | `B` | `S` |
+| **Sol** | `L` | `S` |
+| **Sağ** | `R` | `S` |
+
+### 🏗 Kıskaç Kontrolü
+| İşlem | Basınca Gönderilen | Bırakınca Gönderilen |
+| :--- | :---: | :---: |
+| **Kıskaç AÇ** | `W` | `S` |
+| **Kıskaç KAPAT** | `w` | `S` |
+
+### ⚡ Hız Ayarları
+| Mod | Karakter | Açıklama |
+| :--- | :---: | :--- |
+| **Yüksek Hız** | `q` | Maksimum güç modu |
+| **Orta Hız** | `3` | Standart çalışma hızı |
+| **Yavaş Hız** | `1` | Hassas park ve manevra hızı |
+
+---
+
+## 📲 Uygulama Kullanımı
+
+1.  Robotunuzun Bluetooth modülüne güç verin.
+2.  Uygulamada sağ üstteki **"BAĞLAN"** butonuna basın.
+3.  Listeden robotunuzu seçin.
+4.  Ekranda "Bağlandı!" uyarısını gördükten sonra butonları kullanmaya başlayın.
+
+---
+
+## 🛠 Teknik Bilgiler
+* **Uyumlu Yazılımlar:** softarchx & apoman466 Bluetooth kütüphaneleriyle tam uyumludur.
+* **Sistem Gereksinimi:** Android 4.2.2 ve üzeri sürümlerle çalışır.
+* 
