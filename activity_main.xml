@@ -2,38 +2,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212"
-    android:padding="16dp">
+    android:padding="5dp">
 
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
-        <Button android:id="@+id/btnConnect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BAĞLAN" android:background="#333333" android:textColor="#FFFFFF"/>
-        <Button android:id="@+id/btnSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AYARLAR" android:layout_marginLeft="10dp" android:background="#333333" android:textColor="#FFFFFF"/>
+        <Button android:id="@+id/btnConnect" android:layout_width="120dp" android:layout_height="60dp" android:text="BAĞLAN" android:backgroundTint="#333333" android:textSize="12sp"/>
+        <Button android:id="@+id/btnSettings" android:layout_width="120dp" android:layout_height="60dp" android:text="AYARLAR" android:layout_marginLeft="10dp" android:backgroundTint="#333333" android:textSize="12sp"/>
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true">
-        <Button android:id="@+id/btnF" android:layout_width="60dp" android:layout_height="60dp" android:text="↑" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"/>
-        <Button android:id="@+id/btnL" android:layout_width="60dp" android:layout_height="60dp" android:text="←" android:layout_centerVertical="true" android:layout_alignParentLeft="true"/>
-        <Button android:id="@+id/btnR" android:layout_width="60dp" android:layout_height="60dp" android:text="→" android:layout_centerVertical="true" android:layout_alignParentRight="true"/>
-        <Button android:id="@+id/btnB" android:layout_width="60dp" android:layout_height="60dp" android:text="↓" android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-    <RelativeLayout
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true">
-        <Button android:id="@+id/btnTriangle" android:layout_width="60dp" android:layout_height="60dp" android:text="Δ" android:layout_centerHorizontal="true" android:layout_alignParentTop="true" android:background="#2E7D32"/>
-        <Button android:id="@+id/btnSquare" android:layout_width="60dp" android:layout_height="60dp" android:text="□" android:layout_centerVertical="true" android:layout_alignParentLeft="true" android:background="#D84315"/>
-        <Button android:id="@+id/btnCircle" android:layout_width="60dp" android:layout_height="60dp" android:text="O" android:layout_centerVertical="true" android:layout_alignParentRight="true" android:background="#1565C0"/>
-        <Button android:id="@+id/btnX" android:layout_width="60dp" android:layout_height="60dp" android:text="X" android:layout_centerHorizontal="true" android:layout_alignParentBottom="true" android:background="#C62828"/>
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button android:id="@+id/btnF" android:layout_width="140dp" android:layout_height="160dp" android:text="↑" android:textSize="60sp" android:backgroundTint="#444444"/>
+            <Button android:id="@+id/btnB" android:layout_width="140dp" android:layout_height="160dp" android:text="↓" android:textSize="60sp" android:layout_marginTop="20dp" android:backgroundTint="#444444"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button android:id="@+id/speedHigh" android:layout_width="110dp" android:layout_height="80dp" android:text="YÜKSEK\n(q)" android:textSize="14sp" android:backgroundTint="#FF9800"/>
+            <Button android:id="@+id/speedMid" android:layout_width="110dp" android:layout_height="80dp" android:text="ORTA\n(3)" android:layout_marginTop="15dp" android:backgroundTint="#FFC107"/>
+            <Button android:id="@+id/speedLow" android:layout_width="110dp" android:layout_height="80dp" android:text="YAVAŞ\n(1)" android:layout_marginTop="15dp" android:backgroundTint="#FFEB3B" android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnOpen" android:layout_width="100dp" android:layout_height="100dp" android:text="AÇ\n(W)" android:backgroundTint="#2E7D32" android:textSize="16sp"/>
+                <Button android:id="@+id/btnClose" android:layout_width="100dp" android:layout_height="100dp" android:text="KAPA\n(w)" android:layout_marginLeft="15dp" android:backgroundTint="#C62828" android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnL" android:layout_width="110dp" android:layout_height="110dp" android:text="←" android:textSize="40sp" android:backgroundTint="#1565C0"/>
+                <Button android:id="@+id/btnR" android:layout_width="110dp" android:layout_height="110dp" android:text="→" android:textSize="40sp" android:layout_marginLeft="15dp" android:backgroundTint="#1565C0"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
-
