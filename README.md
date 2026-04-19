@@ -33,7 +33,7 @@ Uygulama **AIDE** ortamında Java diliyle geliştirilmiştir.
 - **Hedef Sürüm:** Android 12+ (Bluetooth Connect/Scan İzinleri Dahil)
 
 ## 👤 Geliştirici
-Bu proje **Ahmet (BBGAMING)** tarafından geliştirilmiştir.
+Bu proje **Ahmet Mirza Yalçın ve Nuri İbrahim Akın** tarafından geliştirilmiştir.
 
 ---
 ⭐ Bu projeyi beğendiyseniz yıldız (star) vermeyi unutmayın!
