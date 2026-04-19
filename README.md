@@ -1,4 +1,4 @@
-# 🏎️ Blueba Pro Control (BBGAMING)
+# 🏎️ Blueba Pro Control
 
 **Blueba Pro Control**, Arduino ve Deneyap Kart tabanlı robotik projeler için geliştirilmiş, yüksek performanslı bir Android Bluetooth kontrol uygulamasıdır. Özellikle **Teknofest Robolig** gibi yarışmalarda akıcı ve güvenli kontrol sağlamak amacıyla tasarlanmıştır.
 
