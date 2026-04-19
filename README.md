@@ -32,8 +32,6 @@ Uygulama **AIDE** ortamında Java diliyle geliştirilmiştir.
 - **Minimum Android Sürümü:** 5.0 (API 21)
 - **Hedef Sürüm:** Android 12+ (Bluetooth Connect/Scan İzinleri Dahil)
 
-## 👤 Geliştirici
-Bu proje **Ahmet Mirza Yalçın ve Nuri İbrahim Akın** tarafından geliştirilmiştir.
 
 ---
 ⭐ Bu projeyi beğendiyseniz yıldız (star) vermeyi unutmayın!
